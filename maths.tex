@@ -1,0 +1,267 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={MATHEMATICAL MODELLING},
+  pdfauthor={NGAIRA},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{MATHEMATICAL MODELLING}
+\author{NGAIRA}
+\date{2024-01-19}
+
+\begin{document}
+\maketitle
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{main }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{()\{}
+  
+  \DocumentationTok{\#\# no intervention}
+  
+\NormalTok{  SEIR }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(time, current\_state, params)\{}
+    
+    \FunctionTok{with}\NormalTok{(}\FunctionTok{as.list}\NormalTok{(}\FunctionTok{c}\NormalTok{(current\_state, params)),\{}
+\NormalTok{      N }\OtherTok{\textless{}{-}}\NormalTok{ S}\SpecialCharTok{+}\NormalTok{E}\SpecialCharTok{+}\NormalTok{I}\SpecialCharTok{+}\NormalTok{R}
+\NormalTok{      dS }\OtherTok{\textless{}{-}} \SpecialCharTok{{-}}\NormalTok{(beta}\SpecialCharTok{*}\NormalTok{S}\SpecialCharTok{*}\NormalTok{I)}\SpecialCharTok{/}\NormalTok{N}
+\NormalTok{      dE }\OtherTok{\textless{}{-}}\NormalTok{ (beta}\SpecialCharTok{*}\NormalTok{S}\SpecialCharTok{*}\NormalTok{I)}\SpecialCharTok{/}\NormalTok{N }\SpecialCharTok{{-}}\NormalTok{ sigma}\SpecialCharTok{*}\NormalTok{E}
+\NormalTok{      dI }\OtherTok{\textless{}{-}}\NormalTok{ sigma}\SpecialCharTok{*}\NormalTok{E }\SpecialCharTok{{-}}\NormalTok{ gamma}\SpecialCharTok{*}\NormalTok{I }\SpecialCharTok{{-}}\NormalTok{ mu}\SpecialCharTok{*}\NormalTok{I}
+\NormalTok{      dR }\OtherTok{\textless{}{-}}\NormalTok{ gamma}\SpecialCharTok{*}\NormalTok{I}
+\NormalTok{      dM }\OtherTok{\textless{}{-}}\NormalTok{ mu}\SpecialCharTok{*}\NormalTok{I}
+      
+      \FunctionTok{return}\NormalTok{(}\FunctionTok{list}\NormalTok{(}\FunctionTok{c}\NormalTok{(dS, dE, dI, dR, dM)))}
+\NormalTok{    \})}
+\NormalTok{  \}}
+\NormalTok{  params }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}
+    \AttributeTok{beta=}\FloatTok{0.5}\NormalTok{, }
+    \AttributeTok{sigma=}\FloatTok{0.25}\NormalTok{, }
+    \AttributeTok{gamma=}\FloatTok{0.2}\NormalTok{, }
+    \AttributeTok{mu=}\FloatTok{0.001}
+\NormalTok{    )}
+  
+\NormalTok{  initial\_state }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\AttributeTok{S=}\DecValTok{999999}\NormalTok{, }\AttributeTok{E=}\DecValTok{1}\NormalTok{, }\AttributeTok{I=}\DecValTok{0}\NormalTok{, }\AttributeTok{R=}\DecValTok{0}\NormalTok{, }\AttributeTok{M=}\DecValTok{0}\NormalTok{)}
+  
+\NormalTok{  times }\OtherTok{\textless{}{-}} \DecValTok{0}\SpecialCharTok{:}\DecValTok{365}
+  
+\NormalTok{  model }\OtherTok{\textless{}{-}} \FunctionTok{ode}\NormalTok{(initial\_state, times, SEIR, params)}
+  
+  \FunctionTok{print}\NormalTok{(}\FunctionTok{summary}\NormalTok{(model))}
+  
+  \FunctionTok{matplot}\NormalTok{(model,}\AttributeTok{type=}\StringTok{"l"}\NormalTok{,}\AttributeTok{lty=}\DecValTok{1}\NormalTok{,}\AttributeTok{main=}\StringTok{"SEIR model"}\NormalTok{,}\AttributeTok{xlab=}\StringTok{"Time"}\NormalTok{)}
+  
+\NormalTok{  legend }\OtherTok{\textless{}{-}} \FunctionTok{colnames}\NormalTok{(model)[}\DecValTok{2}\SpecialCharTok{:}\DecValTok{6}\NormalTok{]}
+  
+  \FunctionTok{legend}\NormalTok{(}\StringTok{"right"}\NormalTok{, }\AttributeTok{legend=}\NormalTok{legend, }\AttributeTok{col=}\DecValTok{2}\SpecialCharTok{:}\DecValTok{6}\NormalTok{, }\AttributeTok{lty =} \DecValTok{1}\NormalTok{)}
+  
+\NormalTok{  infections }\OtherTok{\textless{}{-}} \FunctionTok{as.data.frame}\NormalTok{(model)}\SpecialCharTok{$}\NormalTok{I}
+  
+\NormalTok{  peak }\OtherTok{\textless{}{-}} \FunctionTok{max}\NormalTok{(infections)}
+  
+  \FunctionTok{match}\NormalTok{(peak, infections)}
+  
+  \FunctionTok{print}\NormalTok{(}\FunctionTok{paste}\NormalTok{(}\StringTok{"peak:"}\NormalTok{,peak))}
+  
+  \FunctionTok{print}\NormalTok{(}\FunctionTok{paste}\NormalTok{(}\StringTok{"peak day:"}\NormalTok{, }\FunctionTok{match}\NormalTok{(peak, infections)))}
+  
+  \DocumentationTok{\#\#\# with lockdown}
+  
+  
+\NormalTok{  SEIR\_lockdown }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(time, current\_state, params)\{}
+  
+    \FunctionTok{with}\NormalTok{(}\FunctionTok{as.list}\NormalTok{(}\FunctionTok{c}\NormalTok{(current\_state, params)),\{}
+      
+\NormalTok{      beta }\OtherTok{=} \FunctionTok{ifelse}\NormalTok{(}
+\NormalTok{        (time }\SpecialCharTok{\textless{}=}\NormalTok{ start\_lockdown }\SpecialCharTok{||}\NormalTok{ time }\SpecialCharTok{\textgreater{}=}\NormalTok{ end\_lockdown),}
+        \FloatTok{0.5}\NormalTok{, }\FloatTok{0.1}
+\NormalTok{        )}
+      
+\NormalTok{      N }\OtherTok{\textless{}{-}}\NormalTok{ S}\SpecialCharTok{+}\NormalTok{E}\SpecialCharTok{+}\NormalTok{I}\SpecialCharTok{+}\NormalTok{R}
+\NormalTok{      dS }\OtherTok{\textless{}{-}} \SpecialCharTok{{-}}\NormalTok{(beta}\SpecialCharTok{*}\NormalTok{S}\SpecialCharTok{*}\NormalTok{I)}\SpecialCharTok{/}\NormalTok{N}
+\NormalTok{      dE }\OtherTok{\textless{}{-}}\NormalTok{ (beta}\SpecialCharTok{*}\NormalTok{S}\SpecialCharTok{*}\NormalTok{I)}\SpecialCharTok{/}\NormalTok{N }\SpecialCharTok{{-}}\NormalTok{ sigma}\SpecialCharTok{*}\NormalTok{E}
+\NormalTok{      dI }\OtherTok{\textless{}{-}}\NormalTok{ sigma}\SpecialCharTok{*}\NormalTok{E }\SpecialCharTok{{-}}\NormalTok{ gamma}\SpecialCharTok{*}\NormalTok{I }\SpecialCharTok{{-}}\NormalTok{ mu}\SpecialCharTok{*}\NormalTok{I}
+\NormalTok{      dR }\OtherTok{\textless{}{-}}\NormalTok{ gamma}\SpecialCharTok{*}\NormalTok{I}
+\NormalTok{      dM }\OtherTok{\textless{}{-}}\NormalTok{ mu}\SpecialCharTok{*}\NormalTok{I}
+      
+      \FunctionTok{return}\NormalTok{(}\FunctionTok{list}\NormalTok{(}\FunctionTok{c}\NormalTok{(dS, dE, dI, dR, dM)))}
+\NormalTok{    \})}
+\NormalTok{  \}}
+  
+\NormalTok{  params }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}
+    \AttributeTok{sigma=}\FloatTok{0.25}\NormalTok{,}
+    \AttributeTok{gamma=}\FloatTok{0.2}\NormalTok{,}
+    \AttributeTok{mu=}\FloatTok{0.001}\NormalTok{,}
+    \AttributeTok{start\_lockdown=}\DecValTok{90}\NormalTok{,}
+    \AttributeTok{end\_lockdown=}\DecValTok{150}
+\NormalTok{    )}
+  
+\NormalTok{  initial\_state }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\AttributeTok{S=}\DecValTok{999999}\NormalTok{, }\AttributeTok{E=}\DecValTok{1}\NormalTok{, }\AttributeTok{I=}\DecValTok{0}\NormalTok{, }\AttributeTok{R=}\DecValTok{0}\NormalTok{, }\AttributeTok{M=}\DecValTok{0}\NormalTok{)}
+  
+\NormalTok{  times }\OtherTok{\textless{}{-}} \DecValTok{0}\SpecialCharTok{:}\DecValTok{365}
+  
+\NormalTok{  model }\OtherTok{\textless{}{-}} \FunctionTok{ode}\NormalTok{(initial\_state, times, SEIR\_lockdown, params)}
+  
+  \FunctionTok{print}\NormalTok{(}\FunctionTok{summary}\NormalTok{(model))}
+  
+  \FunctionTok{matplot}\NormalTok{(}
+\NormalTok{    model, }
+    \AttributeTok{type=}\StringTok{"l"}\NormalTok{,}
+    \AttributeTok{lty=}\DecValTok{1}\NormalTok{, }
+    \AttributeTok{main=}\StringTok{"SEIR model (with intervention)"}\NormalTok{, }
+    \AttributeTok{xlab=}\StringTok{"Time"}
+\NormalTok{    )}
+  
+\NormalTok{  legend }\OtherTok{\textless{}{-}} \FunctionTok{colnames}\NormalTok{(model)[}\DecValTok{2}\SpecialCharTok{:}\DecValTok{6}\NormalTok{]}
+  
+  \FunctionTok{legend}\NormalTok{(}\StringTok{"right"}\NormalTok{, }\AttributeTok{legend=}\NormalTok{legend, }\AttributeTok{col=}\DecValTok{2}\SpecialCharTok{:}\DecValTok{6}\NormalTok{, }\AttributeTok{lty =} \DecValTok{1}\NormalTok{)}
+  
+\NormalTok{  infections }\OtherTok{\textless{}{-}} \FunctionTok{as.data.frame}\NormalTok{(model)}\SpecialCharTok{$}\NormalTok{I}
+  
+\NormalTok{  peak }\OtherTok{\textless{}{-}} \FunctionTok{max}\NormalTok{(infections)}
+  
+  \FunctionTok{match}\NormalTok{(peak, infections)}
+  
+  \FunctionTok{print}\NormalTok{(}\FunctionTok{paste}\NormalTok{(}\StringTok{"peak:"}\NormalTok{,peak))}
+  
+  \FunctionTok{print}\NormalTok{(}\FunctionTok{paste}\NormalTok{(}\StringTok{"peak day:"}\NormalTok{, }\FunctionTok{match}\NormalTok{(peak, infections)))}
+\NormalTok{\}}
+
+\FunctionTok{main}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                S            E            I         R         M
+## Min.    108263.6 3.616607e-07 0.000000e+00      0.00    0.0000
+## 1st Qu. 108263.7 5.957435e-03 1.414971e-02  63894.43  319.4721
+## Median  108395.7 8.470071e+00 1.273726e+01 886814.36 4434.0718
+## Mean    362798.6 9.745754e+03 1.212158e+04 612272.74 3061.3637
+## 3rd Qu. 852375.5 1.734331e+03 2.533956e+03 887299.83 4436.4991
+## Max.    999999.0 1.092967e+05 1.265161e+05 887299.86 4436.4993
+## N          366.0 3.660000e+02 3.660000e+02    366.00  366.0000
+## sd      381257.2 2.475783e+04 2.969234e+04 387333.47 1936.6673
+\end{verbatim}
+
+\includegraphics{maths_files/figure-latex/unnamed-chunk-1-1.pdf}
+
+\begin{verbatim}
+## [1] "peak: 126516.073050753"
+## [1] "peak day: 112"
+##                S            E           I         R         M
+## Min.    156885.7 7.699207e-01     0.00000      0.00    0.0000
+## 1st Qu. 160478.2 6.929205e+01    97.71405  63668.75  318.3438
+## Median  789214.4 1.246389e+03  1735.66330 194379.16  971.8958
+## Mean    589558.9 9.216918e+03 11460.62036 387824.44 1939.1222
+## 3rd Qu. 867639.6 1.030043e+04 13780.17591 829898.56 4149.4928
+## Max.    999999.0 6.083432e+04 72443.97892 838916.89 4194.5845
+## N          366.0 3.660000e+02   366.00000    366.00  366.0000
+## sd      350719.3 1.570278e+04 18893.31145 346542.57 1732.7128
+\end{verbatim}
+
+\includegraphics{maths_files/figure-latex/unnamed-chunk-1-2.pdf}
+
+\begin{verbatim}
+## [1] "peak: 72443.9789233556"
+## [1] "peak day: 223"
+\end{verbatim}
+
+\end{document}

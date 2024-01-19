@@ -1,0 +1,64 @@
+---
+title: "MY RESEARCHES"
+author: "NGAIRA"
+date: "2024-01-19"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+require(readr)
+require(tidyverse)
+require(magrittr)
+require(ggplot2)
+require(gtsummary)
+require(reshape2)
+require(officer)
+require(readxl)
+```
+
+# Load Data
+
+```{r, echo=FALSE}
+BUTALI <- read_excel("C:/Users/ADMIN/Desktop/NGAIRA/BUTALI.xlsx")
+
+```
+
+# VIEW DATA
+```{r, echo=FALSE}
+view(BUTALI)
+```
+# SUMMARY 
+```{r}
+data<-as.data.frame(BUTALI)
+summary(data)
+```
+
+
+
+# Count the NAs #  MISSING VALUES
+
+```{r}
+# Count the number of missing values in each column
+colSums(is.na(data))
+
+```
+
+# DATA VISUALISATION
+```{r}
+# Plot Total Turnout per station
+ggplot(data, aes(x = STATION, y = `TURNOUT`)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Total Turnout per station", x = "Station", y = "Total Turnout") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+```
+
+# Scatter plot of Scatter plot of Total Registered vs. Turnout
+```{r}
+ggplot(data, aes(x = `REGISTERED`, y = `TURNOUT`)) +
+  geom_point() +
+  labs(title = "Scatter plot of Total Registered vs. Turnout",
+       x = "Total Registered", y = "Turnout")
+```
+

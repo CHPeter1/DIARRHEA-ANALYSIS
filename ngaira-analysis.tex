@@ -1,0 +1,122 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={IMPROVED},
+  pdfauthor={NGAIRA},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{IMPROVED}
+\author{NGAIRA}
+\date{2024-01-19}
+
+\begin{document}
+\maketitle
+
+\hypertarget{load-data}{%
+\section{Load Data}\label{load-data}}
+
+\hypertarget{view-data}{%
+\section{VIEW DATA}\label{view-data}}
+
+\hypertarget{summary}{%
+\section{Summary}\label{summary}}
+
+\begin{verbatim}
+##    STATION            REGISTERED        TURNOUT         PERCENTAGE   
+##  Length:19          Min.   :  11.0   Min.   :   8.0   Min.   :53.31  
+##  Class :character   1st Qu.: 579.0   1st Qu.: 362.5   1st Qu.:56.82  
+##  Mode  :character   Median : 783.0   Median : 452.0   Median :58.72  
+##                     Mean   : 797.1   Mean   : 473.5   Mean   :61.15  
+##                     3rd Qu.:1085.0   3rd Qu.: 618.5   3rd Qu.:63.26  
+##                     Max.   :1781.0   Max.   :1074.0   Max.   :79.82  
+##      2D%age        Rej votes        ZERO CAST    
+##  Min.   :53.31   Min.   : 0.000   Min.   :  3.0  
+##  1st Qu.:56.83   1st Qu.: 2.500   1st Qu.:191.5  
+##  Median :58.72   Median : 5.000   Median :309.0  
+##  Mean   :61.15   Mean   : 5.158   Mean   :323.6  
+##  3rd Qu.:63.27   3rd Qu.: 8.000   3rd Qu.:457.0  
+##  Max.   :79.82   Max.   :12.000   Max.   :707.0
+\end{verbatim}
+
+\hypertarget{count-the-nas-missing-values}{%
+\section{Count the NAs \# MISSING
+VALUES}\label{count-the-nas-missing-values}}
+
+\begin{verbatim}
+##    STATION REGISTERED    TURNOUT PERCENTAGE     2D%age  Rej votes  ZERO CAST 
+##          0          0          0          0          0          0          0
+\end{verbatim}
+
+\hypertarget{data-visualisation}{%
+\section{DATA VISUALISATION}\label{data-visualisation}}
+
+\includegraphics{ngaira-analysis_files/figure-latex/unnamed-chunk-5-1.pdf}
+
+\hypertarget{scatter-plot-of-scatter-plot-of-total-registered-vs.-turnout}{%
+\section{Scatter plot of Scatter plot of Total Registered
+vs.~Turnout}\label{scatter-plot-of-scatter-plot-of-total-registered-vs.-turnout}}
+
+\includegraphics{ngaira-analysis_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+\end{document}
