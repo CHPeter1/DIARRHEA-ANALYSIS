@@ -63,5 +63,12 @@ ggplot(data, aes(x = `REGISTERED`, y = `TURNOUT`)) +
        x = "Total Registered", y = "Turnout")
 ```
 
-
+# Box plot of stunted 6-23 months by County
+```{r}
+ggplot(data, aes(x = STATION, y = `Rej votes`)) +
+  geom_boxplot() +
+  labs(title = "Box plot of Rejected votes by Sttion",
+       x = "Station", y = "Rejected Votes") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
 
