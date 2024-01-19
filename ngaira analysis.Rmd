@@ -28,6 +28,7 @@ BUTALI <- read_excel("C:/Users/ADMIN/Desktop/NGAIRA/BUTALI.xlsx")
 ```{r, echo=FALSE}
 view(BUTALI)
 ```
+
 # SUMMARY 
 ```{r}
 data<-as.data.frame(BUTALI)
@@ -61,4 +62,6 @@ ggplot(data, aes(x = `REGISTERED`, y = `TURNOUT`)) +
   labs(title = "Scatter plot of Total Registered vs. Turnout",
        x = "Total Registered", y = "Turnout")
 ```
+
+
 

@@ -1,4 +1,5 @@
 #Load required libraries
+
 library(ggplot2)
 library(deSolve)
 library(reshape2)
@@ -31,9 +32,8 @@ sirt_model <- function(time,state,parameters){
 
 #Solving the differential equations
 output<-as.data.frame(ode(y=initial_state_values,func = sirt_model,parms=parameters,times = time))
-
-
 out_long=melt(output,id="time")
+
 # To plot the proportion of susceptible, infected and recovered individuals over time
 ggplot(data = out_long,          
        aes(x = time, y = value/10000, colour = variable, group = variable)) +  
